@@ -17,6 +17,48 @@
 </head>
 <body>
 
+    <div id="notificacion" class="notificacion"></div>
+
+    <header>
+        <h1>TaskManager</h1>
+        <div class="dashboard">
+            <p>Total: <strong id="total-tareas">0</strong></p>
+            <p>Pendientes: <strong id="pendientes-tareas">0</strong></p>
+            <p>Completadas: <strong id="completadas-tareas">0</strong></p>
+        </div>
+    </header>
+
+    <main>
+        <section class="controles">
+            <form id="form-tarea">
+                <input type="hidden" id="tarea-id">
+                <input type="text" id="titulo-tarea" placeholder="Escribe una nueva tarea..." required>
+                <select id="prioridad-tarea">
+                    <option value="Alta">Prioridad: Alta</option>
+                    <option value="Media" selected>Prioridad: Media</option>
+                    <option value="Baja">Prioridad: Baja</option>
+                </select>
+                <button type="submit" id="btn-guardar">Agregar Tarea</button>
+            </form>
+
+            <div class="filtros">
+                <input type="text" id="buscar-tarea" placeholder="Buscar por título...">
+                <select id="orden-tarea">
+                    <option value="fecha">Ordenar por Fecha de creación</option>
+                    <option value="prioridad">Ordenar por Nivel de Prioridad</option>
+                </select>
+                <div>
+                    <button class="btn-filtro" data-estado="Todas">Todas</button>
+                    <button class="btn-filtro" data-estado="Pendientes">Pendientes</button>
+                    <button class="btn-filtro" data-estado="Completadas">Completadas</button>
+                </div>
+            </div>
+        </section>
+
+        <ul id="lista-tareas"></ul>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
 
 </body>
 </html>
